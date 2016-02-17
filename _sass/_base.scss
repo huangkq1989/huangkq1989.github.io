@@ -21,6 +21,8 @@ body {
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -33,6 +35,16 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    border-bottom: 1px LightGrey solid;
+    width: 98%;
+    line-height: 150%;
+    color: #666666;
+    margin-top: $spacing-unit / 2;
 }
 
 
@@ -89,7 +101,6 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
     text-decoration: none;
 
     &:visited {
@@ -98,7 +109,6 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
     }
 }
 
@@ -127,10 +137,14 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+    font-size: 90%;
+    border: solid 1px lightgrey;
+    background-color: rgba(243, 243, 243, 0.78);
+    padding: 1px;
+    line-height: 130%;
+    margin-left: 1px;
+    width: 95%;
 }
 
 code {
@@ -153,13 +167,13 @@ pre {
 /**
  * Wrapper
  */
-.wrapper {
+.wrapper, .nav-wrapper, .post-list-wrapper {
     max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
     max-width:         calc(800px - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
     @extend %clearfix;
 
     @include media-query($on-laptop) {
@@ -168,6 +182,15 @@ pre {
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
+}
+
+.wrapper, .post-list-wrapper {
+    padding: $spacing-unit;
+    border: 1px solid LightGrey;
+}
+
+.wrapper a {
+    border-bottom: 1px dashed Red;
 }
 
 
